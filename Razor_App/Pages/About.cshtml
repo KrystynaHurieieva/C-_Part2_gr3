@@ -1,0 +1,28 @@
+﻿@page
+@model Razor_App.Pages.AboutModel
+@{
+    ViewData["Title"] = "About me";
+    Layout = "_Layout";
+}
+@section Scripts{
+    @*<script>alert("Hello");</script>*@
+
+}
+<div style="margin-top:30px">
+    <form method="post">
+        <div> Name: <input asp-for="Name" /></div>
+        <div><input type="submit" /></div>
+    </form>
+</div>
+<section id="main">
+    <h1>About me</h1>
+    <p>Hello, my name is Kris!</p>
+    <h2>Hello @Model.Name</h2>
+
+    <div>
+        @foreach (var num in Model.MyArray)
+        {
+            <h3>@num</h3>
+        }
+    </div>
+</section>

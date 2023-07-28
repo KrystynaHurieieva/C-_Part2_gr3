@@ -1,0 +1,18 @@
+﻿@page
+@model Razor_App.Pages.ProductsModel
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>Welcome</h1>
+<div>
+    <h2>@Model.GetName()</h2>
+    @foreach(var m in Model.Products)
+    {
+        <h5>@m.Id</h5>
+        <img style="width: 100px;" src="@m.Image" />
+        <h3>@m.Name</h3>
+        <h4>@m.Description</h4>
+        <h4>@m.Price</h4>
+    }
+</div>
