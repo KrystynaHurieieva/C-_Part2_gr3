@@ -10,9 +10,23 @@
     @foreach(var m in Model.Products)
     {
         <h5>@m.Id</h5>
-        <img style="width: 100px;" src="@m.Image" />
         <h3>@m.Name</h3>
         <h4>@m.Description</h4>
         <h4>@m.Price</h4>
+    }
+    @foreach (var m in Model.Customers)
+    {
+        <h5>@m.Id</h5>
+        <h3>@m.Name</h3>
+        <h4>@m.Address</h4>
+    }
+    @foreach (var m in Model.Orders)
+    {
+        <h5>@m.Id</h5>
+        <h3>@m.Date</h3>
+       @foreach(var t in m.Products)
+        {
+            <h3>@t.Id</h3>
+        }
     }
 </div>

@@ -10,6 +10,7 @@ namespace Razor_App
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+            builder.Services.AddDbContext<Razor_App.Models.MyAppContext>();
             //builder.Services.Configure<RazorViewEngineOptions>(o => { 
             //o.PageViewLocationFormats.Add("")
             //})

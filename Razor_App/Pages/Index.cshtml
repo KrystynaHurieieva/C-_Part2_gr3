@@ -2,9 +2,78 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    var rand = new Random();
+    var item = rand.Next(Model.MyColors.Count);
+    var color = Model.MyColors[item].Name;
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="" />
+    <title> Page name</title>
+</head>
+<body>
+   @* <h1> My header </h1>
+    <h2> My header </h2>
+    <h3> My header </h3>
+    <h4> My header </h4>
+    <h5> My header </h5>
+    <h6> My header </h6>
+    <p style="background-color:@color.ToString()">
+        my first paragraph my first paragraph my first paragraph my
+        first paragraphmy first paragraphmy first paragraphmy first paragraph </p>
+    <p style="background-color:orange; color: chartreuse;">
+        my first paragraph my first paragraph <br> my first paragraph my
+        first paragraphmy first paragraphmy first paragraphmy first paragraph
+    </p>
+    <p class="myclass">
+        my first paragraph my first paragraph my first paragraph my
+        first paragraphmy first paragraphmy first paragraphmy first paragraph
+    </p>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <a id="test" href="http://google.com"> GOOGLE </a>
+    <img src="~/download (1).jpg" alt="test" />
+    <a href="~/Privacy"> Privacy </a>
+    <a href="http://google.com"> GOOGLE 1 </a>
+    <h2>unnumbered list</h2>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <h2>numbered list</h2>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>*@
+    <table style="background-color:purple">
+        <tr>
+            <th>Number</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Kris</td>
+        </tr>
+         <tr>
+            <td>5</td>
+            <td>Kris</td>
+        </tr>
+         <tr>
+            <td>3</td>
+            <td>Kris</td>
+        </tr>
+         <tr>
+            <td>4</td>
+            <td>Kris</td>
+        </tr> <tr>
+            <td>5</td>
+            <td>Kris</td>
+        </tr>
+    </table>
+</body>
+</html>

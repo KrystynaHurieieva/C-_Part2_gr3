@@ -18,5 +18,35 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: green;
+}
+a:link {
+    color: green;
+}
+a:visited{
+    color: chocolate;
+}
+a:active{
+    color:lightcoral;
+}
+p {
+    color: aqua;
+    font-family: 'MS Gothic';
+    font-size: 150%;
+    padding: 15px;
+}
+
+#test {
+    font-size:50px;
+}
+
+p.myclass {
+    font-size: large;
+}
+
+table, th, td{
+    text-align: center;
+    border: 2px groove grey;
+    padding: 10px;
 }

@@ -1,30 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Razor_App.Models;
 
 namespace Razor_App.Pages
 {
     public class ProductsModel : PageModel
     {
-        public List<Product> Products { get; set; }
-        public void OnGet()
+        private readonly MyAppContext myAppContext;
+        public List<Product> Products { get; set; } = new List<Product>();
+        public List<Customer> Customers { get; set; } = new List<Customer>();
+        public List<Order> Orders{ get; set; } = new List<Order>();
+        public ProductsModel(MyAppContext myAppContext)
         {
-            Products = new List<Product>();
-            Products.Add(new Product
-            {
-                Id = 1,
-                Name = "Flower",
-                Price = 150,
-                Description = "beautiful flower",
-                Image = "/GettyImages-598083938-1-22dab883ff2a43d8b2751d9f363f2d5d.jpg"
-            }); Products.Add(new Product
-            {
-                Id = 2,
-                Name = "Car",
-                Price = 100000,
-                Description = "car",
-                Image = "/download.jpg"
-            });
+            this.myAppContext = myAppContext;
+        }
+        public async Task OnGetAsync()
+        {
+            Products = await myAppContext.Products.ToListAsync();
+            Customers = await myAppContext.Customers.ToListAsync();
+            Orders = await myAppContext.Orders.ToListAsync();
         }
 
         public string GetName()
